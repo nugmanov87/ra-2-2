@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export default function ShopCard(props) {
-  const { name, price, color, img } = props.items;
+  const {
+    name, price, color, img,
+  } = props.items;
 
   return (
     <div className="item">
