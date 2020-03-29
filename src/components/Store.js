@@ -57,14 +57,13 @@ export default function Store() {
         icon={icons}
         onSwitch={() => {
           console.log("change state here");
-          setIcon(prevIcons =>
-            prevIcons === "view_list" ? "view_module" : "view_list"
+          setIcon(
+            prevIcons =>
+              (prevIcons === "view_list" && "view_module") || "view_list"
           );
         }}
       />
-      {icons === "view_list" ? (
-        <CardsView cards={products} />
-      ) : (
+      {(icons === "view_list" && <CardsView cards={products} />) || (
         <ListView items={products} />
       )}
     </>
